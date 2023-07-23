@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons/Ionicons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import HomeScreen from './src/screens/HomeScreen';
 import ReimbursementListScreen from './src/screens/ReimbursementListScreen';
@@ -16,62 +16,54 @@ import WalletCreateScreen from './src/screens/WalletCreateScreen';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+// フッターメニューのアイコン切り替え処理
+const getTabBarIcon = ({ route, size, color }) => {
+  let iconName;
+  if (route.name === 'Home') {
+    iconName = 'money';
+  } else if (route.name === 'List') {
+    iconName = 'list';
+  } else if (route.name === 'Setting') {
+    iconName = 'settings';
+  }
+  return <MaterialIcons name={iconName} size={size} color={color} />;
+};
+
+// 設定画面のroutingを定義
+function SettingStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="Setting"
+    >
+      {/* 設定画面 */}
+      <Stack.Screen
+        name="Setting"
+        component={SettingScreen}
+      />
+      {/* 詳細設定画面 */}
+      <Stack.Screen
+        name="OthersSetting"
+        component={OthersSettingScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
 export default function App() {
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator
-    //     initialRouteName="WalletCreate"
-    //     screenOptions={{
-    //       headerStyle: { backgroundColor: '#467fd3' },
-    //       headerTitleStyle: { color: '#fff' },
-    //       headerTitle: 'Memo App',
-    //       headerTintColor: '#fff',
-    //       headerBackTitle: 'Back',
-    //       cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-    //       gestureEnabled: true,
-    //       gestureDirection: 'horizontal',
-    //     }}
-    //   >
-
-    //     {/* 割り勘アプリ */}
-    //     <Stack.Screen name="Home" component={HomeScreen} />
-    //     <Stack.Screen name="ReimbursementList" component={ReimbursementListScreen} />
-    //     <Stack.Screen name="ReimbursementCreate" component={ReimbursementCreateScreen} />
-    //     <Stack.Screen name="Setting" component={SettingScreen} />
-    //     <Stack.Screen name="OthersSetting" component={OthersSettingScreen} />
-    //     <Stack.Screen name="DeleteDialog" component={DeleteDialog} />
-    //     <Stack.Screen name="AccountCreate" component={AccountCreateScreen} />
-    //     <Stack.Screen name="WalletCreate" component={WalletCreateScreen} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="Home"
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ color, size }) => getTabBarIcon({ route, color, size }),
+        })}
         tabBarOptions={{
-          activeTintColor: '#42f44b',
+          activeTintColor: '#4946D1',
+          inactiveTintColor: 'gray',
         }}
       >
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            tabBarLabel: 'Home',
-            tabBarIcon: ({ color, size }) => {
-              <Ionicons name="home" color={color} size={size} />
-            },
-          }}
-        />
-        <Tab.Screen
-          name="Setting"
-          component={SettingScreen}
-          options={{
-            tabBarLabel: 'Settings',
-            tabBarIcon: ({ color, size }) => {
-              <Ionicons name="settings" color={color} size={size} />
-            },
-          }}
-        />
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="List" component={ReimbursementListScreen} />
+        <Tab.Screen name="Setting" component={SettingStack} />
       </Tab.Navigator>
     </NavigationContainer>
   );
