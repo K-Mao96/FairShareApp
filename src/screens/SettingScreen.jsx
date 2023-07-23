@@ -39,7 +39,7 @@ export default function SettingScreen(props) {
         style={styles.settingContainer}
         underlayColor="#BCBABA"
         activeOpacity="0.9"
-        onPress={() => navigation.navigate('MemoCreate')}
+        onPress={() => navigation.navigate('OthersSetting')}
       >
         <View style={styles.settingItem}>
           <Text style={styles.settingItemText}>
