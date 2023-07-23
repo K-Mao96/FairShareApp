@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     width: 306,
     backgroundColor: '#F3F1F1',
-    borderRadius: '10px',
+    borderRadius: 10,
     alignSelf: 'center',
     marginTop: 50,
   },
@@ -145,12 +145,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 17,
   },
   title: {
-    fontSize: '20px',
+    fontSize: 20,
     textAlign: 'center',
     fontWeight: '400',
   },
   label: {
-    fontSize: '18px',
+    fontSize: 18,
     marginBottom: 10,
   },
   inputDoubleItem: {
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
   },
   inputDoubleText: {
-    fontSize: '18px',
+    fontSize: 18,
     textAlign: 'center',
     lineHeight: 52,
   },

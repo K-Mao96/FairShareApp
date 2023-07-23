@@ -64,17 +64,17 @@ const styles = StyleSheet.create({
   },
   homeTitle: {
     textAlign: 'center',
-    fontSize: '32px',
+    fontSize: 32,
     fontWeight: '700',
   },
   homeSubTitle: {
     textAlign: 'center',
-    fontSize: '15px',
+    fontSize: 15,
     fontWeight: '400',
     marginVertical: 15,
   },
   totalAmoutPannel: {
-    borderRadius: '16px',
+    borderRadius: 16,
     backgroundColor: '#fff',
     width: 248,
     height: 71,
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     marginBottom: 83,
   },
   updateDateText: {
-    fontSize: '14px',
+    fontSize: 14,
     marginRight: 5,
   },
   updateButton: {
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   },
   updateButtonText: {
     color: '#fff',
-    fontSize: '15px',
+    fontSize: 15,
     fontWeight: '700',
     textAlign: 'center',
   },
@@ -112,13 +112,13 @@ const styles = StyleSheet.create({
     width: 136,
     height: 44,
     backgroundColor: '#4946D1',
-    borderRadius: '8ps',
+    borderRadius: 8,
     justifyContent: 'center',
     alignSelf: 'center',
   },
   calculateButtonText: {
     color: '#fff',
-    fontSize: '20px',
+    fontSize: 20    ,
     fontWeight: '700',
     textAlign: 'center',
   },
