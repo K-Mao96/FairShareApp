@@ -22,7 +22,12 @@ export default function OthersSettingScreen(props) {
       {/* ログアウト機能 */}
       <View style={styles.settingContainer}>
         <View style={styles.settingItem}>
-          <Text style={styles.settingItemText}>ログアウト</Text>
+          <Text
+            style={styles.settingItemText}
+            onPress={() => navigation.navigate('WalletCreate')}
+          >
+            ログアウト
+          </Text>
         </View>
       </View>
       {/* アカウント削除機能 */}
@@ -37,6 +42,7 @@ export default function OthersSettingScreen(props) {
         </View>
       </View>
 
+      {/* アカウントとデータの削除用ダイアログ */}
       <DeleteDialog
         visible={dialogVisible}
         onClose={handleCloseDialog}
