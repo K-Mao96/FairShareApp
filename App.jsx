@@ -45,6 +45,10 @@ function SettingStack() {
         name="OthersSetting"
         component={OthersSettingScreen}
       />
+      <Stack.Screen
+        name="WalletCreate"
+        component={WalletCreateScreen}
+      />
     </Stack.Navigator>
   );
 }
