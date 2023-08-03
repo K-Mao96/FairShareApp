@@ -3,8 +3,7 @@ import {
   View, StyleSheet, Text, TextInput, TouchableOpacity
 } from 'react-native';
 
-import CircleButton from '../components/CircleButton';
-import ReimbursementCreateScreen from "./ReimbursementCreateScreen";
+import InputUserNameDialog from '../components/InputUserNameDialog';
 
 export default function WalletCreateScreen(proprs) {
   const { navigation } = proprs;
@@ -22,11 +21,22 @@ export default function WalletCreateScreen(proprs) {
   return (
     <View style={styles.container}>
       {/* アカウント作成ボタン */}
-      <TouchableOpacity style={[styles.buttonContainer, styles.buttonContainerTop]}>
-        <Text style={styles.buttonText}>
+      <TouchableOpacity
+        style={[styles.buttonContainer, styles.buttonContainerTop]}
+        onPress={showDialog}
+      >
+        <Text
+          style={styles.buttonText}
+        >
           新しくサイフを作る
         </Text>
       </TouchableOpacity>
+
+      {/* サイフ作成用ダイアログ */}
+      <InputUserNameDialog
+        visible={dialogVisible}
+        onClose={handleCloseDialog}
+      />
 
       {/* パートナー連携ボタン */}
       <View style={styles.partnerCollaboContainer}>
