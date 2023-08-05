@@ -5,7 +5,7 @@ import {
 
 import Dialog from 'react-native-dialog';
 
-import CompleteCollaboDialog from './CompleteCollaboDialog';
+import CompleteCreateWalletDialog from './CompleteCreateWalletDialog';
 
 export default function InputPartnerNameDialog({ visible, onClose, onChildEvent }) {
   const [dialogVisible, setDialogVisible] = useState(false);
@@ -57,7 +57,7 @@ export default function InputPartnerNameDialog({ visible, onClose, onChildEvent 
       <Dialog.Button label="OK" onPress={showDialog} />
 
       {/* 連携完了ダイアログ */}
-      <CompleteCollaboDialog
+      <CompleteCreateWalletDialog
         visible={dialogVisible}
         onClose={handleCloseDialog}
         onChildEvent={closeParent}
