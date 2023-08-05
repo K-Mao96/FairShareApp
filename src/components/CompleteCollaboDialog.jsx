@@ -7,11 +7,6 @@ import Dialog from "react-native-dialog";
 
 export default function CompleteCollaboDialog({ visible, onClose, onChildEvent }) {
   // ダイアログ用
-  const handleOK = () => {
-    // OKボタンが押されたときの処理
-    onClose();
-  };
-
   const closeParent = () => {
     onClose();
     onChildEvent();
@@ -25,10 +20,7 @@ export default function CompleteCollaboDialog({ visible, onClose, onChildEvent }
     >
       <View style={styles.explanation}>
         <Text style={styles.explanationText}>
-          ふたりのサイフが完成しました！パートナーにもこのアプリをインストールしてもらって、ふたりで立て替え情報を管理しましょう！
-          {'\n'}
-          ※ひとりのままでもご利用
-          可能です。
+          パートナーとの連携が完了しました。
         </Text>
       </View>
 
@@ -47,19 +39,5 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     marginBottom: 17,
-  },
-  buttonContainer: {
-    backgroundColor: '#4946D1',
-    width: 90,
-    borderRadius: 8,
-    marginBottom: 24,
-    alignSelf: 'flex-end',
-  },
-  buttonLabel: {
-    fontSize: 15,
-    paddingVertical: 5,
-    color: '#fff',
-    fontWeight: '700',
-    textAlign: 'center',
   },
 });

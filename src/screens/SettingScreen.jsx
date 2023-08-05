@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View, Text, StyleSheet, TouchableHighlight,
 } from 'react-native';
 
+import InputPartnerNumberDialog from "../components/InputPartnerNumberDialog";
+
 export default function SettingScreen(props) {
   const { navigation } = props;
+  // ダイアログ用
+  const [dialogVisible, setDialogVisible] = useState(false);
+  const showDialog = () => {
+    setDialogVisible(true);
+  };
+  const handleCloseDialog = () => {
+    setDialogVisible(false);
+  };
+
   return (
     <View style={styles.container}>
       {/* カード */}
@@ -28,11 +39,16 @@ export default function SettingScreen(props) {
       </View>
 
       {/* 連携機能 */}
-      <View style={styles.settingContainer}>
+      <TouchableHighlight
+        style={styles.settingContainer}
+        underlayColor="#BCBABA"
+        activeOpacity="0.9"
+        onPress={showDialog}
+      >
         <View style={styles.settingItem}>
           <Text style={styles.settingItemText}>パートナーと連携する</Text>
         </View>
-      </View>
+      </TouchableHighlight>
 
       {/* その他機能 */}
       <TouchableHighlight
@@ -47,6 +63,12 @@ export default function SettingScreen(props) {
           </Text>
         </View>
       </TouchableHighlight>
+
+      {/* パートナー連携ダイアログ */}
+      <InputPartnerNumberDialog
+        visible={dialogVisible}
+        onClose={handleCloseDialog}
+      />
     </View>
   );
 }

@@ -56,7 +56,7 @@ export default function InputPartnerNameDialog({ visible, onClose, onChildEvent 
       <Dialog.Button label="キャンセル" onPress={closeParent} />
       <Dialog.Button label="OK" onPress={showDialog} />
 
-      {/* 連携完了ダイアログ */}
+      {/* サイフ作成完了ダイアログ */}
       <CompleteCreateWalletDialog
         visible={dialogVisible}
         onClose={handleCloseDialog}

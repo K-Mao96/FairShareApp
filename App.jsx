@@ -45,6 +45,7 @@ function SettingStack() {
         name="OthersSetting"
         component={OthersSettingScreen}
       />
+      {/* サイフ作成画面 */}
       <Stack.Screen
         name="WalletCreate"
         component={WalletCreateScreen}
