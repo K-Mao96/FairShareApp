@@ -19,9 +19,6 @@ export default function ReimbursementCreateScreen({ visible, onClose }) {
   const day = String(currentDate.getDate()).padStart(2, '0');
   const formattedDate = `${year}/${month}/${day}`;
 
-  const [dialogPosition, setDialogPosition] = useState(0);
-  const initialDialogPosition = 0;
-
   const handleOK = () => {
     // OKボタンが押されたときの処理
     console.log('Selected Person:', selectedPerson);
