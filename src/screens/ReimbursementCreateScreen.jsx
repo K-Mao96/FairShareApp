@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
-  View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
+  View, Text, StyleSheet, TouchableOpacity, Keyboard,
 } from 'react-native';
 
 import Dialog from "react-native-dialog";
@@ -18,6 +18,9 @@ export default function ReimbursementCreateScreen({ visible, onClose }) {
   const month = String(currentDate.getMonth() + 1).padStart(2, '0');
   const day = String(currentDate.getDate()).padStart(2, '0');
   const formattedDate = `${year}/${month}/${day}`;
+
+  const [dialogPosition, setDialogPosition] = useState(0);
+  const initialDialogPosition = 0;
 
   const handleOK = () => {
     // OKボタンが押されたときの処理
@@ -50,6 +53,10 @@ export default function ReimbursementCreateScreen({ visible, onClose }) {
     }
   };
 
+  const handleOutsideDialog = () => {
+    Keyboard.dismiss();
+  };
+
   const inputPersonStyleA = isSelectedPersonA
     ? styles.tappedInputDoubleItem : styles.inputDoubleItem;
 
@@ -60,6 +67,7 @@ export default function ReimbursementCreateScreen({ visible, onClose }) {
     <Dialog.Container
       visible={visible}
       contentStyle={styles.inner}
+      onBackdropPress={handleOutsideDialog}
     >
       <Dialog.Title style={styles.title}>
         支払ったものを
@@ -144,8 +152,6 @@ const styles = StyleSheet.create({
   inner: {
     width: 306,
     backgroundColor: '#F3F1F1',
-    borderRadius: 10,
-    alignSelf: 'center',
   },
   section: {
     marginHorizontal: 17,
@@ -206,7 +212,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#4946D1',
     width: 90,
     borderRadius: 8,
-    marginBottom: 24,
+    marginBottom: 10,
+    marginTop: -10,
     alignSelf: 'flex-end',
   },
   buttonLabel: {
@@ -220,13 +227,12 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: '#D9D9D9',
     width: 136,
-    height: 35,
+    height: 30,
     justifyContent: 'center',
-    alignSelf: 'flex-end',
     marginBottom: 20,
   },
   reimbursementDateText: {
-    fontSize: 18,
+    fontSize: 14,
     textAlign: 'center',
   },
   dialogButton: {
