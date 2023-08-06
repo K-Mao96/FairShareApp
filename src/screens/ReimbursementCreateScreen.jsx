@@ -122,8 +122,16 @@ export default function ReimbursementCreateScreen({ visible, onClose }) {
           </Text>
         </View>
       </View>
-      <Dialog.Button label="キャンセル" onPress={handleCancel} />
-      <Dialog.Button label="OK" onPress={handleOK} />
+      <Dialog.Button
+        label="キャンセル"
+        onPress={handleCancel}
+        style={styles.dialogButton}
+      />
+      <Dialog.Button
+        label="OK"
+        onPress={handleOK}
+        style={styles.dialogButton}
+      />
     </Dialog.Container>
   );
 }
@@ -134,27 +142,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#D9D9D9',
   },
   inner: {
-    paddingTop: 16,
     width: 306,
     backgroundColor: '#F3F1F1',
     borderRadius: 10,
     alignSelf: 'center',
-    marginTop: 50,
   },
   section: {
     marginHorizontal: 17,
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center',
     fontWeight: '400',
   },
   label: {
     fontSize: 18,
-    marginBottom: 10,
+    marginBottom: 8,
   },
   inputDoubleItem: {
-    height: 52,
+    height: 40,
     paddingHorizontal: 10,
     backgroundColor: '#fff',
   },
@@ -174,24 +180,24 @@ const styles = StyleSheet.create({
     marginBottom: 17,
   },
   tappedInputDoubleItem: {
-    backgroundColor: 'lightblue',
+    backgroundColor: '#56E1FF',
   },
   inputDoubleText: {
     fontSize: 18,
     textAlign: 'center',
-    lineHeight: 52,
+    lineHeight: 40,
   },
   inputContainer: {
     backgroundColor: '#fff',
     borderRadius: 10,
-    height: 51,
+    borderWidth: 0,
+    height: 42,
     width: '100%',
     alignSelf: 'center',
     justifyContent: 'center',
   },
   input: {
     fontSize: 20,
-    height: 51,
     width: '100%',
     alignSelf: 'center',
     textAlign: 'center',
@@ -217,10 +223,13 @@ const styles = StyleSheet.create({
     height: 35,
     justifyContent: 'center',
     alignSelf: 'flex-end',
-    marginBottom: 30,
+    marginBottom: 20,
   },
   reimbursementDateText: {
     fontSize: 18,
     textAlign: 'center',
+  },
+  dialogButton: {
+    fontSize: 16,
   },
 });

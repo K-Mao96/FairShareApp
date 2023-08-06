@@ -25,23 +25,24 @@ export default function ReimbursementList() {
 const styles = StyleSheet.create({
   reimbursementListContainer: {
     paddingHorizontal: 20,
+    paddingTop: 20,
   },
   reimbursementListItem: {
-    paddingVertical: 15,
+    paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#BCBABA',
   },
   reimbursementListItemTop: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 13,
+    marginBottom: 10,
   },
   reimbursementListItemTitle: {
-    fontSize: '20px',
+    fontSize: 18,
     fontWeight: '600',
   },
   reimbursementListItemPayer: {
-    fontSize: '20px',
+    fontSize: 18,
     fontWeight: '400',
   },
   reimbursementListItemBottom: {
@@ -49,11 +50,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   reimbursementListItemDate: {
-    fontSize: '20px',
+    fontSize: 18,
     fontWeight: '400',
   },
   reimbursementListItemAmount: {
-    fontSize: '20px',
+    fontSize: 18,
     fontWeight: '600',
   },
 });

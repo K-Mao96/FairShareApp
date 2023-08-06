@@ -27,7 +27,7 @@ export default function HomeScreen(proprs) {
 
       {/* 合計金額表示パネル */}
       <View style={styles.totalAmoutPannel}>
-        <Text style={styles.totalAmoutText}>3000</Text>
+        <Text style={styles.totalAmoutText}>￥3,000</Text>
       </View>
 
       <View style={styles.updateContainer}>
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 32,
     fontWeight: '700',
+    marginTop: 170,
   },
   homeSubTitle: {
     textAlign: 'center',
@@ -83,13 +84,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   totalAmoutText: {
+    fontSize: 36,
+    fontWeight: '700',
   },
   updateContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 18,
-    marginBottom: 83,
+    marginBottom: 60,
   },
   updateDateText: {
     fontSize: 14,

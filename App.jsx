@@ -19,11 +19,11 @@ const Tab = createBottomTabNavigator();
 // フッターメニューのアイコン切り替え処理
 const getTabBarIcon = ({ route, size, color }) => {
   let iconName;
-  if (route.name === 'Home') {
+  if (route.name === 'トップ') {
     iconName = 'money';
-  } else if (route.name === 'List') {
+  } else if (route.name === '立て替えリスト') {
     iconName = 'list';
-  } else if (route.name === 'Setting') {
+  } else if (route.name === '設定') {
     iconName = 'settings';
   }
   return <MaterialIcons name={iconName} size={size} color={color} />;
@@ -66,9 +66,9 @@ export default function App() {
           inactiveTintColor: 'gray',
         }}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="List" component={ReimbursementListScreen} />
-        <Tab.Screen name="Setting" component={SettingStack} />
+        <Tab.Screen name="トップ" component={HomeScreen} />
+        <Tab.Screen name="立て替えリスト" component={ReimbursementListScreen} />
+        <Tab.Screen name="設定" component={SettingStack} />
       </Tab.Navigator>
     </NavigationContainer>
   );
