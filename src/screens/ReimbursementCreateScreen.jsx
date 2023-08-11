@@ -127,6 +127,7 @@ export default function ReimbursementCreateScreen({ visible, onClose }) {
           </Text>
         </View>
       </View>
+
       <Dialog.Button
         label="キャンセル"
         onPress={handleCancel}
@@ -142,10 +143,6 @@ export default function ReimbursementCreateScreen({ visible, onClose }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#D9D9D9',
-  },
   inner: {
     width: 306,
     backgroundColor: '#F3F1F1',

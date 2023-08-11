@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  View, StyleSheet, Text, TextInput, TouchableOpacity
+  View, StyleSheet, Text, TouchableOpacity,
 } from 'react-native';
 
 import CircleButton from '../components/CircleButton';
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   },
   calculateButtonText: {
     color: '#fff',
-    fontSize: 20    ,
+    fontSize: 20,
     fontWeight: '700',
     textAlign: 'center',
   },
